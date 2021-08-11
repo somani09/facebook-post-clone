@@ -1,6 +1,15 @@
-.App {
-  text-align: center;
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+p{
+  margin: 0;
 }
+
+.App {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -24,15 +33,3 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
