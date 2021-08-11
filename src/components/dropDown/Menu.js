@@ -1,5 +1,8 @@
-import React from 'react'
-import './header.scss'
+import React, { useState } from 'react'
+import './menu.scss'
+
+import {AiOutlineBars} from 'react-icons/ai'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 import { SiFacebook } from 'react-icons/si'
 import { AiFillHome } from 'react-icons/ai'
 import { BsDisplay } from 'react-icons/bs'
@@ -7,18 +10,18 @@ import { HiOutlineOfficeBuilding } from 'react-icons/hi'
 import { AiOutlineUsergroupAdd } from 'react-icons/ai'
 import { RiGamepadLine } from 'react-icons/ri'
 
-function Header() {
-    return (
-        <div className="header row align-center">
+function Menu() {
 
-            <div className="search row">
-                <SiFacebook className="header-icon facebook-icon"/>
-                <div className="search-input-container center">
-                    <input className="search-input" placeholder="&#61442; Search Facebook" />
-                </div>
+    const [open, setOpen] = useState(false);
+    
+    return (
+        <div className="menu">
+            <div onClick={e=>setOpen(!open)} className="sidebar-open center">
+                <AiOutlineBars style={{ display: open ? 'none': 'block'}} className="sidebar-icon"/>    
+                <AiOutlineCloseCircle style={{ display: open ? 'block': 'none'}} className="sidebar-icon"/>    
             </div>
-            
-            <div className="center-area row space-evenly">
+            <div style={{ display: open ? 'block': 'none'}} className="items">
+            <div className="center-area col ">
                 <div className="home-center active center-block center">
                     <div className="center active-block icon-container">
                         <AiFillHome className="center-icon active-icon" />
@@ -45,16 +48,9 @@ function Header() {
                     </div>  
                 </div>
             </div>
-
-            <div className="right-area">
-                <div className="name-area row center">
-                    <img  src={'https://graph.facebook.com/4522149344572667/picture?type=small' } className="header-image" />
-                    <p>Vaibhav</p>
-                </div>
             </div>
-
         </div>
     )
 }
 
-export default Header
+export default Menu

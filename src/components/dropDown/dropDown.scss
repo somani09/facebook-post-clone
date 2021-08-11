@@ -1,0 +1,21 @@
+.dropDown {
+    display: block;
+    width: 100%;
+    .facebook{
+        width: 100%;
+        height: 100px;
+        background-color: #0775C9;
+
+        .title{
+            font-size: 30px;
+            color: white;
+            font-weight: 600;
+        }
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    .dropDown {
+        display: none;
+    }
+  }
