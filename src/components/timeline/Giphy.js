@@ -62,6 +62,19 @@ function Giphy({showGifBlock,setShowGifBlock, gifToPost, setGifToPost }) {
           fetchData();
     }
 
+    const renderError = () => {
+      if (isError) {
+        return (
+          <div
+            className="alert alert-danger alert-dismissible fade show"
+            role="alert"
+          >
+            Unable to get Gifs, please try again in a few minutes
+          </div>
+        );
+      }
+    };
+
     useEffect(() => {
         const fetchData = async () => {
           setIsError(false);
@@ -104,6 +117,7 @@ function Giphy({showGifBlock,setShowGifBlock, gifToPost, setGifToPost }) {
 
     return (
         <div>
+          {renderError()}
             <div 
                 style={{ visibility: showGifBlock ? 'visible': 'hidden'}} 
                 className="gif-block col align-center">
